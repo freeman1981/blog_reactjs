@@ -25,9 +25,6 @@ export default function Post() {
             <Typography sx={{fontSize: 14}}>
                 {post.content}
             </Typography>
-            <Typography sx={{fontSize: 14}}>
-                comments coming soon
-            </Typography>
         </Container>
     )
 }

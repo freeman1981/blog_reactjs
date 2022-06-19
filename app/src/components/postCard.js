@@ -13,7 +13,7 @@ export default function PostCard({post}) {
                 <Link to={`/${post.id}`}>
                     <CardContent>
                         <Typography variant="h4">{post.name}</Typography>
-                        <Typography variant="h8">{post.content}</Typography>
+                        <Typography variant="h8">{post.modified}</Typography>
                     </CardContent>
                 </Link>
             </Card>
