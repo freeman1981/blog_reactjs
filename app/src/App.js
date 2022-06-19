@@ -1,20 +1,21 @@
-import React from "react";
+import * as React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Posts from "./pages/posts";
+import Post from "./pages/post";
+import About from "./pages/about";
+import CustomAppBar from "./components/head";
 
-import {Route, Routes} from "react-router-dom";
-import Posts from "./components/Posts";
-import Home from "./components/Home";
-import PostDetail from "./components/PostDetail";
 
-
-const App = () => {
+export default function App() {
     return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="posts" element={<Posts />}>
-                <Route path=":id" element={<PostDetail />} />
-            </Route>
-        </Routes>
+        <BrowserRouter>
+            <CustomAppBar />
+            <Routes>
+                <Route path="/" element={<Posts />} />
+                <Route path="/:postId" element={<Post />} />
+                <Route path="/about" element={<About />} />
+                }/>
+            </Routes>
+        </BrowserRouter>
     );
 }
-
-export default App;
