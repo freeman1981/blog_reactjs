@@ -15,7 +15,7 @@ export default function Post() {
             const posts = await getPost(postId);
             setPost(posts)
         })();
-    }, []);
+    }, [postId]);
 
     return (
         <Container>

@@ -19,6 +19,8 @@ export default function CustomAppBar() {
                 <Toolbar>
                     <Link component={RouterLink} color='#fff' to='/'><Box sx={{ m: 2}}>Posts</Box></Link>
                     <Link component={RouterLink} color='#fff' to='/about'><Box sx={{ m: 2}}>About</Box></Link>
+                    <Link component={RouterLink} color='#fff' to='/filter'><Box sx={{ m: 2}}>Filter</Box></Link>
+                    <Link component={RouterLink} color='#fff' to='/login'><Box sx={{ m: 2}}>Login</Box></Link>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton
