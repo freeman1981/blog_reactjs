@@ -1,4 +1,4 @@
-Запуск 
+# Разработка 
 
 `docker-compose up`
 
@@ -16,6 +16,11 @@ https://mui.com/material-ui/react-card/
 
 
 localhost не канает, поэтому прописал в /etc/hosts алиас
+
+# Запуск на проде
+`docker-compose -f docker-compose.prod.yml build`
+
+`docker-compose -f docker-compose.prod.yml up`
 
 
 # todo 

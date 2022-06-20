@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  app_prod:
+    build:
+      context: app
+      target: prod
+    ports:
+      - "80:80"
