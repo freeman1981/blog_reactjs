@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom'
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import {client} from "../utils";
 
 
@@ -22,9 +23,7 @@ export default function Post() {
             <Typography sx={{fontSize: 20}}>
                 {post.name}
             </Typography>
-            <Typography sx={{fontSize: 14}}>
-                {post.content}
-            </Typography>
+            <Box dangerouslySetInnerHTML={{__html: post.content}} />
         </Container>
     )
 }
