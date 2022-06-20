@@ -1,20 +1,19 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import {client} from "../utils";
+import {getPosts} from "../utils";
 import PostCard from '../components/postCard'
 
 
 export default function Posts() {
-    const [posts, setPosts] = React.useState([]);
+    const [posts, setPosts] = useState([]);
 
-    React.useEffect(() => {
-        const fetchPosts = async () => {
-            const response = await client.get("/api/posts/");
-            setPosts(response.data)
-        }
-        fetchPosts();
+    useEffect(() => {
+        (async () => {
+            const posts = await getPosts();
+            setPosts(posts)
+        })();
     }, []);
 
     return (

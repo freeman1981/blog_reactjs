@@ -1,21 +1,20 @@
 import {useParams} from 'react-router-dom'
-import React from 'react';
+import {useState, useEffect} from 'react';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import {client} from "../utils";
+import {getPost} from "../utils";
 
 
 export default function Post() {
     const {postId} = useParams();
-    const [post, setPost] = React.useState({});
+    const [post, setPost] = useState({});
 
-    React.useEffect(() => {
-        const fetchPost = async () => {
-            const response = await client.get(`/api/posts/${postId}/`);
-            setPost(response.data);
-        }
-        fetchPost()
+    useEffect(() => {
+        (async () => {
+            const posts = await getPost(postId);
+            setPost(posts)
+        })();
     }, []);
 
     return (
